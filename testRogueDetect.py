@@ -2,7 +2,7 @@
 # -*-coding:utf8-*-
 #############################################################################################################
 #
-# File      ：   testRogue.py
+# File      ：   testRogueDetect.py
 # Author    ：   luliying
 # Brief     ：   test rogue detection
 # 
