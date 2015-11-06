@@ -38,7 +38,6 @@ class login(utils.EAPLoginSession):
 
     # case1: 获取被测机型
     def testLoginDutMode(self):
-        # 第一次请求json，以得服务器设置的cookies
         res = self.s.get("http://%s/data/login.json"%(utils.ip))
         self.assertEqual(res.status_code, 200)
         self.assertEqual(res.json()["error"], 0)
@@ -49,7 +48,6 @@ class login(utils.EAPLoginSession):
         res = self.s.get("http://%s/data/login.json"%(utils.ip))
         data = {"username":utils.username, "password":utils.passwordMD5 }
         res = self.s.post("http://%s/"%(utils.ip), data)
-        # 再次请求，查看error值
         res = self.s.get("http://%s/data/login.json"%(utils.ip))
         self.assertEqual(res.json()["error"], 0)
 
